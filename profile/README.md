@@ -1,15 +1,15 @@
 # 🤖 RepoSwarm
 
-**AI-powered multi-repo architecture discovery platform**
+**Give your AI agents the architecture context they need — across hundreds of repositories.**
 
-RepoSwarm automatically analyzes your entire codebase portfolio and generates standardized architecture documentation. Point it at your GitHub repos (or CodeCommit, GitLab, Azure DevOps, Bitbucket) and get back clean, structured `.arch.md` files — perfect as AI agent context, onboarding docs, or architecture reviews.
+RepoSwarm is an AI-powered platform that automatically analyzes your entire codebase portfolio and generates standardized `.arch.md` architecture documents. Feed them to your coding agents, use them for onboarding, or keep them as living architecture docs. Works with GitHub, CodeCommit, GitLab, Azure DevOps, and Bitbucket.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/reposwarm/reposwarm-cli/main/install.sh | sh
 reposwarm new --local && reposwarm investigate my-app
 ```
 
-🎬 [**Watch the demo →**](https://www.youtube.com/watch?v=rOMf9xvpgtc)
+🎬 [**Watch the demo →**](https://www.youtube.com/watch?v=rOMf9xvpgtc) · 📋 [**Sample output →**](https://github.com/royosherove/repo-swarm-sample-results-hub)
 
 ---
 
@@ -27,8 +27,8 @@ reposwarm new --local && reposwarm investigate my-app
 
 ## How It Works
 
-**Cache check → Clone → Type detection → Structure analysis → Prompt selection → AI analysis → Store results → Cleanup**
+Point RepoSwarm at your repos. It clones, detects the repo type (backend, frontend, mobile, infra, library), picks specialized analysis prompts, and sends the codebase to an LLM for deep architecture analysis. The output — clean, structured `.arch.md` files — gets committed to a results hub repo that your agents can reference.
 
-RepoSwarm uses specialized prompts for different repo types (backend, frontend, mobile, infra, libraries) and supports multiple LLM providers (Anthropic, Amazon Bedrock, LiteLLM). Investigations run as Temporal workflows with automatic retries and incremental updates.
+Investigations run as Temporal workflows with automatic retries, incremental updates (only re-analyzes repos with new commits), and parallel execution across your entire portfolio. Supports Anthropic, Amazon Bedrock, and LiteLLM as providers.
 
 All Docker images are multi-arch (`linux/amd64` + `linux/arm64`) and published automatically on every push to `main`.
